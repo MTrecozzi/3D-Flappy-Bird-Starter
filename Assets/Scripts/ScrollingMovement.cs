@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ScrollingMovement : MonoBehaviour
 {
+
+    public float moveSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,14 +14,9 @@ public class ScrollingMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-    // Fixed Update is Run at a Fixed Interval, use it for object movement and physics!
     void FixedUpdate()
     {
-
+        transform.position = transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * moveSpeed;
     }
+    
 }
