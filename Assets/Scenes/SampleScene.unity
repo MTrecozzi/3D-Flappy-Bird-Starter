@@ -273,6 +273,8 @@ GameObject:
   - component: {fileID: 673692227}
   - component: {fileID: 673692231}
   - component: {fileID: 673692232}
+  - component: {fileID: 673692234}
+  - component: {fileID: 673692233}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -386,8 +388,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
   force: 4
-  isDead: 0
   manager: {fileID: 941869957}
+--- !u!114 &673692233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673692226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e33825a86c06d448fdd216fe9b1f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 941869957}
+  isDead: 0
+--- !u!114 &673692234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673692226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d55517df3514544683df962261d6be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionManager: {fileID: 673692233}
+  clickVelocity: {fileID: 673692232}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +706,7 @@ MonoBehaviour:
   spawnInterval: 1.2
   t: 0
   resetTime: 1
+  DebugMode: 0
 --- !u!4 &941869958
 Transform:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class GameplayManager : MonoBehaviour
 
     public float resetTime;
 
+    public bool DebugMode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,11 @@ public class GameplayManager : MonoBehaviour
 
     public void ResetGame()
     {
+
+        if (DebugMode)
+        {
+            return;
+        }
 
         Invoke("Reload", resetTime);
 

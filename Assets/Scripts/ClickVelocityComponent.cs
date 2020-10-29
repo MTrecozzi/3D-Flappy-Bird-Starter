@@ -10,7 +10,6 @@ public class ClickVelocityComponent : MonoBehaviour
     //ex: public int health = 5;
     public Rigidbody rigidbody;
     public int force = 5;
-    public bool isDead;
 
     public GameplayManager manager;
 
@@ -24,11 +23,7 @@ public class ClickVelocityComponent : MonoBehaviour
     void Update()
     {
 
-      if (Input.GetMouseButtonDown(0)  && isDead == false)
-        {
-            AddVelocity();
-            //AddPosition();
-        }
+      
     }
 
     public void Scored()
@@ -36,22 +31,7 @@ public class ClickVelocityComponent : MonoBehaviour
         manager.AddScore();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.other.CompareTag("Obstacle"))
-        {
-            // set us to dead
-            isDead = true;
-
-            manager.ResetGame();
-
-            // transform.position = (transform.position + new Vector);
-            // transform.positin += new Vector;
-
-        }
-    }
-
-    void AddVelocity()
+    public void AddVelocity()
     {
         rigidbody.velocity = new Vector3(0, force, 0);
 
