@@ -12,16 +12,17 @@ public class ClickVelocityComponent : MonoBehaviour
     public int force = 5;
     public bool isDead;
 
+    public GameplayManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        // rigidbody acting weird if untouched
     }
 
     void Update()
     {
-
-
 
       if (Input.GetMouseButtonDown(0)  && isDead == false)
         {
@@ -30,12 +31,19 @@ public class ClickVelocityComponent : MonoBehaviour
         }
     }
 
+    public void Scored()
+    {
+        manager.AddScore();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.other.CompareTag("Obstacle"))
         {
             // set us to dead
             isDead = true;
+
+            manager.ResetGame();
 
             // transform.position = (transform.position + new Vector);
             // transform.positin += new Vector;
