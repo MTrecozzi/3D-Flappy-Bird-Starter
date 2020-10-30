@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameplayManager : MonoBehaviour
 {
 
+    #region
     public int score = 0;
 
     public GameObject spawnPrefab;
@@ -18,6 +20,12 @@ public class GameplayManager : MonoBehaviour
 
     public bool DebugMode;
 
+    #endregion
+
+    public TextMeshProUGUI scoreText;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +35,7 @@ public class GameplayManager : MonoBehaviour
     public void AddScore()
     {
         score = score + 1;
+        scoreText.text = "Score: " + score;
     }
 
     // instead calling reload, turn their reload interval into 0 seconds
