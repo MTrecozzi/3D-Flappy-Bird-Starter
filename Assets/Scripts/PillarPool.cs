@@ -16,6 +16,9 @@ public class PillarPool : MonoBehaviour
     public GameObject GetGameObject()
     {
 
+        Debug.Log("Get Game Object Called Once");
+
+
         // if we have a Pillar stored in our Pool, get it from our data structure, enable it and return it
 
         if (pool.Count > 0)

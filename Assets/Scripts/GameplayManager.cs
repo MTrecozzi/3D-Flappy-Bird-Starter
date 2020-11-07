@@ -17,16 +17,17 @@ public class GameplayManager : MonoBehaviour
     public float t = 0;
 
     public float resetTime;
-
     public bool DebugMode;
+
+    public AudioSource coinSound;
 
     #endregion
 
     public TextMeshProUGUI scoreText;
-
     public PillarPool pool; // set this in inspector
+    public bool paused = true;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class GameplayManager : MonoBehaviour
     {
         score = score + 1;
         scoreText.text = "Score: " + score;
+        coinSound.Play();
     }
 
     // instead calling reload, turn their reload interval into 0 seconds
@@ -95,8 +97,6 @@ public class GameplayManager : MonoBehaviour
         GameObject pillarFromPool = pool.GetGameObject();
         pillarFromPool.transform.position = finalPosition;
 
-        pool.GetGameObject().transform.position = finalPosition;
-
 
         //Instantiate(spawnPrefab, finalPosition, Quaternion.identity);
     }
@@ -104,6 +104,11 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (paused)
+        {
+            return;
+        }
+
         // every so or so seconds, spawn a pillar
 
         t = t + Time.deltaTime;
