@@ -388,7 +388,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
   force: 4
-  manager: {fileID: 941869957}
 --- !u!114 &673692233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionManager: {fileID: 673692233}
   clickVelocity: {fileID: 673692232}
+  manager: {fileID: 941869957}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941869958}
   - component: {fileID: 941869957}
+  - component: {fileID: 941869959}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -707,6 +708,8 @@ MonoBehaviour:
   t: 0
   resetTime: 1
   DebugMode: 0
+  scoreText: {fileID: 146786095}
+  pool: {fileID: 941869959}
 --- !u!4 &941869958
 Transform:
   m_ObjectHideFlags: 0
@@ -721,6 +724,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &941869959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941869956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f39d0629c4132c4d973f2fb6de91fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToSpawn: {fileID: 7469459508461101111, guid: a6f45a9ea1493dc4892e4fac3b5e64ff, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

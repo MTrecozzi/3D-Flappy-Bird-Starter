@@ -11,25 +11,13 @@ public class ClickVelocityComponent : MonoBehaviour
     public Rigidbody rigidbody;
     public int force = 5;
 
-    public GameplayManager manager;
-
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         // rigidbody acting weird if untouched
     }
-
-    void Update()
-    {
-
-      
-    }
-
-    public void Scored()
-    {
-        manager.AddScore();
-    }
+   
 
     public void AddVelocity()
     {

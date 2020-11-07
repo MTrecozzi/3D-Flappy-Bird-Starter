@@ -24,6 +24,8 @@ public class GameplayManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    public PillarPool pool; // set this in inspector
+
     
 
     // Start is called before the first frame update
@@ -85,7 +87,18 @@ public class GameplayManager : MonoBehaviour
 
         // new pillar to our final position
 
-        Instantiate(spawnPrefab, finalPosition, Quaternion.identity);
+        // new Pillar = pool.GetGameObject();
+
+        //newPillar.transform.position = set position right;
+
+        // get a gameobject from the pool, then set its position equal to desired position
+        GameObject pillarFromPool = pool.GetGameObject();
+        pillarFromPool.transform.position = finalPosition;
+
+        pool.GetGameObject().transform.position = finalPosition;
+
+
+        //Instantiate(spawnPrefab, finalPosition, Quaternion.identity);
     }
 
     // Update is called once per frame

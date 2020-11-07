@@ -8,10 +8,17 @@ public class PlayerController : MonoBehaviour
     public DieOnCollision collisionManager;
     public ClickVelocityComponent clickVelocity;
 
+    public GameplayManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    public void Scored()
+    {
+        manager.AddScore();
     }
 
     // Update is called once per frame

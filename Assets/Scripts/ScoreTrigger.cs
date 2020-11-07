@@ -8,7 +8,7 @@ public class ScoreTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<ClickVelocityComponent>().Scored();
+            other.GetComponent<PlayerController>().Scored();
         }
     }
 }
