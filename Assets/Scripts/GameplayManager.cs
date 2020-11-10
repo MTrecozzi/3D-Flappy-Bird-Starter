@@ -10,6 +10,8 @@ public class GameplayManager : MonoBehaviour
     #region
     public int score = 0;
 
+    public static GameplayManager manager;
+
     public GameObject spawnPrefab;
     public Transform spawnPosition;
 
@@ -27,12 +29,21 @@ public class GameplayManager : MonoBehaviour
     public PillarPool pool; // set this in inspector
     public bool paused = true;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-    
+        if (manager == null)
+        {
+            manager = this;
+        } else if (manager != null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    private void Start()
+    {
+        
     }
 
     public void AddScore()

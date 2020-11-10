@@ -6,9 +6,10 @@ public class ScoreTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>().Scored();
+            GameplayManager.manager.AddScore();
         }
     }
 }

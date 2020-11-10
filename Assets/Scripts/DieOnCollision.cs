@@ -6,7 +6,6 @@ using UnityEngine.PlayerLoop;
 public class DieOnCollision : MonoBehaviour
 {
 
-    public GameplayManager manager;
     public bool isDead = false;
 
     // Start is called before the first frame update
@@ -22,7 +21,7 @@ public class DieOnCollision : MonoBehaviour
             // set us to dead
             isDead = true;
 
-            manager.ResetGame();
+            GameplayManager.manager.ResetGame();
 
         }
     }

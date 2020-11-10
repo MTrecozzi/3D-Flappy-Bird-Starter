@@ -6,7 +6,6 @@ public class PauseComponent : MonoBehaviour
 {
     public Rigidbody rigidbody;
     private bool paused = true;
-    public GameplayManager manager;
 
 
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class PauseComponent : MonoBehaviour
     public void UnPause()
     {
         rigidbody.isKinematic = false;
-        manager.paused = false;
+        GameplayManager.manager.paused = false;
         paused = false;
     }
 }
